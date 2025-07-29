@@ -1,3 +1,3 @@
-# Gruvbox themed hyprland
+# RosePine themed hyprland
 A backup for dotfiles... 
 - rn, i dont guarantee if this repo has something to offer you... giving it a try may even break your hyprland setup .... atleast, I can assure it ;-;

@@ -1,22 +1,24 @@
 // -*- mode: jsonc -*-
 {
-  "name" : "overlay",
-  "layer" : "overlay",
+  "name": "overlay",
+  "layer": "overlay",
   // "layer": "top", // Waybar at top layer
   "position": "bottom", // Waybar position (top|bottom|left|right)
   "height": 39, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
   "spacing": 0, // Gaps between modules (4px)
-  "margin" : "0 0 0 8",
+  "margin": "0 0 0 8",
   // Choose the order of the modules
   "modules-left": [
     "clock",
-    "custom/waybar_media",
-    "custom/recording_status"
+    // "custom/waybar_media",
+    "custom/recording_status",
+    "mpd"
+    // "mpris"
   ],
   "modules-center": [
     // "hyprland/window"
-    "hyprland/workspaces", 
+    "hyprland/workspaces",
     // "custom/media",
     // "mpd",
     "custom/notification"
@@ -93,7 +95,10 @@
   "sway/scratchpad": {
     "format": "{icon} {count}",
     "show-empty": false,
-    "format-icons": ["", ""],
+    "format-icons": [
+      "",
+      ""
+    ],
     "tooltip": true,
     "tooltip-format": "{app}: {title}"
   },
@@ -106,16 +111,15 @@
     "escape": true
   },
   "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
     "format-disconnected": "Disconnected ",
-    "format-stopped": "",
-    "unknown-tag": "N/A",
-    "interval": 5,
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "interval": 2,
     "consume-icons": {
-      "on": " "
+      "on": " " // Icon shows only when "consume" is on
     },
     "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
+      "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
       "on": " "
     },
     "repeat-icons": {
@@ -164,12 +168,26 @@
     "critical-threshold": 80,
     // "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",
-    "format-icons": ["", "", ""]
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
   },
   "backlight": {
     // "device": "acpi_video1",
     "format": "{percent}% {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "battery": {
     "states": {
@@ -185,7 +203,19 @@
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "tooltip": "",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
   },
   "battery#bat2": {
     "bat": "BAT2"
@@ -207,11 +237,14 @@
     // {ipaddr} for ip address
     // {signalStrength}
     "format-wifi": "{icon}",
-
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
     "on-click-middle": "alacritty -e nmtui",
-
     "format-ethernet": "󰈀",
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname}",
@@ -234,7 +267,9 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [""]
+      "default": [
+        ""
+      ]
     },
     "on-click": "pavucontrol"
   },
@@ -266,21 +301,19 @@
     "signal": 10,
     "exec": "$HOME/.config/waybar/record_state.sh"
   },
-  // "custom/waybar-mpris": {
-  // "return-type": "json",
-  // "exec": "waybar-mpris --position --autofocus --order 'TITLE'",
-  // "on-click": "waybar-mpris --send toggle",
-  // // This option will switch between players on right click.
-  //     "on-click-right": "waybar-mpris --send player-next",
-  // // The options below will switch the selected player on scroll
-  //     // "on-scroll-up": "waybar-mpris --send player-next",
-  //     // "on-scroll-down": "waybar-mpris --send player-prev",
-  // // The options below will go to next/previous track on scroll
-  //     // "on-scroll-up": "waybar-mpris --send next",
-  //     // "on-scroll-down": "waybar-mpris --send prev",
-  // "escape": true
-  // },
-
+  "mpris": {
+    "format": "{player_icon} {title}",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵",
+      "brave": "",
+      "spotify": ""
+    },
+    "status-icons": {
+      "paused": "⏸"
+    }
+    // "ignored-players": ["firefox"]
+  },
   "custom/waybar_media": {
     "exec": "/home/ton3s/.config/waybar/media_status.sh",
     "return-type": "json",
