@@ -1,83 +1,158 @@
 * {
-    border: 2px;
+    font-size : 12px;
+    font-weight : bolder;
+    /* border: 2px; */
     /* border : none; */
     border-radius: 8px;
     font-family: "JetbrainsMono Nerd Font";
     /* color : #ebdbb2; */
     /* font-size: 15px; */
     min-height: 15px;
-    /* background-color: #292828; */
 }
 
-window#waybar {
-    background: transparent;
+#waybar {
+    background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    margin : 0 20px;
+    opacity: 0.85;
 }
 
-#window {
-    background: transparent;
-}
+
+
 
 #workspaces {
-    border: 2px solid #a89884;
+    transition : all cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
+    /* border: 2px solid #a89884; */
     border-radius: 10px;
+    margin : 0;
     margin-left: 10px;
     font-size: 12px;
     font-weight: 500;
     padding-left: 5px;
     padding-right: 10px;
-    margin-top: 6px;
-    background: #292828;
+    background: transparent;
     /* background: #161320; */
     transition: none;
 }
 
 #workspaces button {
-    transition: none;
-    color: #a89884;
-    /* default: color: #b5e8e0; */
-    /* background: transparent; */
-    border-radius: 10px;
+    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 250ms;
+    border: 1px transparent;
+    color: #908caa;
+    font-weight: bolder;
+    background-color: transparent;
+    border  : 2px solid #908caa;
+    font-size: 12px;
+    padding : 0 2px;
+    padding-top: 1px;
+    margin: 8px 8px;
+    border-radius: 50%;
 }
 
 #workspaces button.active {
-    color: #ebdbb2;
+    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 250ms;
+    border: 2px #c4a7e7 solid;
+    border-radius: 50%;
+    background : transparent;
+    padding: 0 20px;
+    padding-top: 1px;
+    font-size: 12px;
+    margin: 8px 8px;
+    color: transparent;
     border-radius: 12px;
     /* font-size : 13px; */
 }
 
-#workspaces button:hover {
-    transition: none;
-    animation: alternate;
-    animation-duration: 250ms;
-    box-shadow: inherit;
-    text-shadow: inherit;
-    /* border-color: #e8a2af; */
-    /* color: #e8a2af; */
+#workspaces button.urgent {
+    color : #ebbcba;
+    border-color : #ebbcba;
+    padding : 0px 20px;
+    border-radius : 15px;
+    animation-name : urgent-shake;
+    animation-timing-function: linear;
+    animation-duration: 750ms;
+    animation-delay: 1s;
+} 
+
+@keyframes urgent-shake {
+    0% {
+        padding: 0px 20px;
+    }
+    20% {
+        padding-left : 25px;
+        padding-right : 15px;
+    }
+    40% {
+        padding-left : 15px;
+        padding-right : 25px;
+    }
+    50% {
+        padding-left : 25px;
+        padding-right : 15px;
+    }
+    60% {
+        padding-left : 15px;
+        padding-right : 25px
+    }
+    80% {
+        padding-left : 25px;
+        padding-right : 15px;
+    }
+    100% {
+        padding : 0 20px;
+    }
 }
 
-#network {
-    border: 2px solid #a89884;
+@keyframes delay-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  50.01% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-top: 2px;
-    padding-right: 15px;
-    margin-bottom: 0px;
-    border-radius: 10px;
+#workspaces button:hover {
+    transition: all ease-out 150ms;
+    border: 2px solid #c4a7e7;
+    border-radius: 50%;
+    background: transparent;
+    padding: 0 20px;
+    padding-top: 0px;
+    font-size: 12px;
+    margin: 8px 8px;
+    color: #c4a7e7;
+    border-radius: 12px;
+}
+
+
+#network {
+    /* border: 2px solid #a89884; */
+    font-weight : bold;
+    font-size : 14px;
+    margin: 6px 8px;
+    padding-top : 2px;
+    padding-left: 8px;
+    padding-right: 14px;
+    border-radius: 15px;
     transition: none;
-    color: #a89884;
-    background: #292828;
+    color: #ea9a97;
+    border : 2px solid #ea9a97 ;
     /*default: background: #bd93f9;*/
     transition: width 0.5s ease-in-out;
 }
 
 #wireplumber {
-    margin-top: 6px;
+    margin-bottom: 6px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    /* margin-bottom: 0px; */
     border-radius: 10px;
     transition: none;
     color: #1a1826;
@@ -86,125 +161,106 @@ window#waybar {
 
 #battery {
     font-size: 13px;
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 12px;
-    padding-right: 12px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    border-width: 10px;
-    border: 2px solid #a89884;
+    margin: 6px 8px;
+    /* border: 2px solid #a89884; */
+    padding : 0 10px;
     transition: none;
-    color: #a89884;
-    background: #292828;
-    border-radius: 10px;
+    border-radius: 15px;
+    background: transparent;
+    border : 2px solid rgb(156, 207, 216);
+    color : rgb(156, 207, 216);
 }
+
 
 #battery:not(.charging) {
-    font-size: 15px;
-    margin-top: 6px;
-    padding-left: 10px;
-    padding-right: 13px;
-    margin-bottom: 0px;
+    font-size: 13px;
+    margin: 6px 8px;
+    padding-top : 1px;
+    padding-left: 7px;
+    padding-right: 10px;
     border-radius: 10px;
     border-width: 10px;
-    border: 2px solid #a89884;
+    background: transparent;
     transition: none;
-    color: #a89884;
-    background: #292828;
-    border-radius: 10px;
+    color: rgb(235, 111, 146);
+    border : 2px solid rgb(235, 111, 146);
+    border-radius: 15px;
 }
 
+
 #battery.discharging {
-    font-size: 13px;
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 12px;
-    padding-right: 12px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    border-width: 10px;
-    border: 2px solid #a89884;
-    transition: none;
-    color: #a89884;
-    background: #292828;
-    border-radius: 10px;
+    margin : 6px 8px;
+    padding : 0 9px;
+    color : rgb(196, 167, 231);
+    border-color : rgb(196, 167, 231);
 }
 
 #battery.critical:not(.charging) {
-    background-color: #292828;
-    color: #d65d0e;
-    border: #d65d0e;
-    color: #a89884;
+    background : transparent;
+    border : 2px solid #eb6f92;
+    color: #eb6f92;
     animation-name: blink;
-    animation-duration: 1s;
-    animation-timing-function: linear;
+    animation-duration: 750ms;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
 @keyframes blink {
     to {
-        background-color: #bf616a;
-        color: #b5e8e0;
+        background-color: #eb6f92;
+        color: #161320;
     }
 }
 
 #backlight {
-    margin-top: 6px;
     margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 13px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    border: 2px solid #a89884;
-    color: #a89884;
-    background: #292828;
+    margin : 6px 8px;
+    border-radius: 15px;
+    color: rgb(62, 143, 176);
+    padding-left : 10px;
+    padding-right : 13px;
+    border : 2px solid rgb(62, 143, 176);
 }
 
 #clock {
-    border: 2px solid #a89884;
-
-    margin-top: 6px;
-    margin-left: 8px;
-    margin-right: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    color: #a89884;
-    background: #292828;
-    font-size: 14px;
-    font-weight: 700;
-    /*default: background: #abe9b3; */
+    transition : all cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
+    border : 2px solid #c4a7e7;
+    color : #c4a7e7;
+    margin : 6px 8px;
+    margin-left : 0px;
+    border-radius : 15px;
+    padding : 0px 10px;
 }
 
+#clock:hover {
+    transition : all cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
+    background-color: transparent;
+    border : 2px solid @foreground;
+    color : @foreground;
+}
 #custom-notification {
-    border: 2px solid #a89884;
+    /* border: 2px solid #a89884; */
 
-    margin-top: 6px;
-    margin-right: 8px;
-    padding-left: 10px;
-    padding-right: 12px;
-    margin-bottom: 0px;
-    border-radius: 10px;
+    margin : 6px 8px;
+    padding-left : 8px;
+    padding-right : 11px;
+    border-radius: 15px;
     transition: none;
-    color: #a89884;
-    background: #292828;
+    color: #f6c177;
+    border : 2px solid #f6c177;
+    background: transparent;
     font-size: 15px;
     font-weight: 700;
 }
 
 #custom-notification.dnd {
-    border: 2px solid #a89884;
+    /* border: 2px solid #a89884; */
 
-    margin-top: 6px;
+    margin-bottom: 6px;
     margin-right: 8px;
     padding-left: 10px;
     padding-right: 14px;
-    margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
     color: #a89884;
@@ -214,10 +270,9 @@ window#waybar {
 }
 
 #memory {
-    margin-top: 6px;
+    margin-bottom: 6px;
     margin-left: 8px;
     padding-left: 10px;
-    margin-bottom: 0px;
     padding-right: 10px;
     border-radius: 10px;
     transition: none;
@@ -227,10 +282,9 @@ window#waybar {
 }
 
 #cpu {
-    margin-top: 6px;
+    margin-bottom: 6px;
     margin-left: 8px;
     padding-left: 10px;
-    margin-bottom: 0px;
     padding-right: 10px;
     border-radius: 10px;
     transition: none;
@@ -241,7 +295,7 @@ window#waybar {
 
 #custom-launcher {
     font-size: 24px;
-    margin-top: 6px;
+    margin-bottom: 6px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 5px;
@@ -253,23 +307,10 @@ window#waybar {
 }
 
 #custom-media {
-    margin-top: 6px;
+    margin-bottom: 6px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    color: #161320;
-    background: #f2cdcd;
-}
-
-#custom-power {
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 5px;
-    padding-right: 10px;
-    margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
     color: #161320;
@@ -277,34 +318,42 @@ window#waybar {
 }
 
 #pulseaudio {
-    border: 2px solid #a89884;
-    margin-top: 6px;
-    margin-left: 8px;
+    /* border: 2px solid #a89884; */
+    font-weight : bold;
+    border : 2px solid rgb(156, 207, 216);
+    margin: 6px  8px;
+    padding : 3px 0px;
     padding-left: 10px;
     padding-right: 15px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    border-radius: 10px;
+    border-radius: 15px;
     transition: none;
-    color: #a89884;
-    background: #292828;
+    color: rgb(156, 207, 216);
 }
 
 #custom-power {
-    border: 2px solid #a89884;
-
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 13px;
-
-    margin-bottom: 0px;
+    transition : all ease-out 150ms;
+    /* border: 2px solid #a89884; */
+    margin : 6px 8px;
+    margin-right : 0;
+    border : 2px solid #56526e;
     margin-right: 8px;
-    border-radius: 10px;
+    border-radius: 15px;
     transition: none;
-    color: #a89884;
-    font-size: 12px;
-    background: #292828;
+    color: transparent;
+    font-size: 15px;
+}
+
+#custom-power:hover {
+    transition : all ease-out 150ms;
+    margin : 6px 8px;
+    padding-left : 6px;
+    padding-right : 10px;
+    border : 2px solid #eb6f92;
+    margin-right: 8px;
+    border-radius: 15px;
+    transition: none;
+    background-color: #eb6f92;
+    color:#2a273f;
 }
 
 #menu {
@@ -313,6 +362,7 @@ window#waybar {
     min-width: 10px;
     color: #ebdbb2;
 }
+
 #menuitem {
     border-radius: 15px;
 }
@@ -328,39 +378,62 @@ window#waybar {
 } */
 
 #tray {
-    border: 2px solid #a89884;
-    margin-top: 6px;
+    /* border: 2px solid #a89884; */
+    margin: 6px 8px;
     margin-left: 8px;
+    border : 2px solid #e0def4;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
+    border-radius: 15px;
     transition: none;
-    color: #a89884;
-    background: #292828;
 }
 
 #custom-recording_status {
-    border: 2px solid #a89884;
+    /* border: 2px solid #a89884; */
     font-size: 15px;
-    margin-top: 6px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    border-radius: 10px;
+    margin : 6px 8px;
+    padding: 0px 30px;
+    border-radius: 15px;
     transition: none;
-    color: #cc241d;
-    background: #292828;
+    color: rgb(235, 111, 146);
+    background: transparent;
+    border : 2px solid rgb(235, 111, 146);
+    animation-name : record-blink;
+    animation-duration: 750ms;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes record-blink {
+    to {
+        color : #161320;
+        background: rgb(235, 111, 146);
+    }
 }
 
 #custom-waybar_media {
-    border: 2px solid #a89884;
-    font-size: 13px;
-    background: #292828;
-    margin-top: 6px;
-    margin-left: 10px;
-    color: #a89884;
-    padding-left: 10px;
-    padding-right: 10px;
+    font-weight : bold;
+    transition : ease-out all 250ms;
+    letter-spacing: 0em;
+    /* background : #c4a7e7; */
+    color : #f6c177;
+    margin : 6px 8px;
+    padding : 1px 10px;
+    background-size : cover;
+    font-size : 12px;
+    border-radius : 20px;
+    border : 2px #f6c177 solid;
+}
+
+#custom-waybar_media:hover {
+    transition : ease-out all 250ms;
+    background : transparent;
+    color : #c4a7e7;
+    margin : 8px;
+    padding : 1px 20px;
+    background-size : cover;
+    font-size : 12px;
+    border-radius : 20px;
+    border : 1px solid @foreground; 
 }

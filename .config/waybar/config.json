@@ -1,19 +1,25 @@
 // -*- mode: jsonc -*-
 {
+  "name" : "overlay",
+  "layer" : "overlay",
   // "layer": "top", // Waybar at top layer
-  // "position": "top", // Waybar position (top|bottom|left|right)
+  "position": "bottom", // Waybar position (top|bottom|left|right)
   "height": 39, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
   "spacing": 0, // Gaps between modules (4px)
+  "margin" : "0 0 0 8",
   // Choose the order of the modules
-  "modules-left": ["hyprland/workspaces", "custom/waybar_media"],
+  "modules-left": [
+    "clock",
+    "custom/waybar_media",
+    "custom/recording_status"
+  ],
   "modules-center": [
     // "hyprland/window"
-    "clock",
+    "hyprland/workspaces", 
     // "custom/media",
-    "mpd",
-    "custom/notification",
-    "custom/recording_status"
+    // "mpd",
+    "custom/notification"
   ],
   "modules-right": [
     // "idle_inhibitor",
@@ -35,11 +41,11 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "󰂚",
+      "notification": "",
       "none": "",
       "dnd-notification": "",
       "dnd-none": "",
-      "inhibited-notification": "󰂚",
+      "inhibited-notification": "",
       "inhibited-none": "",
       "dnd-inhibited-notification": "󰂛",
       "dnd-inhibited-none": ""
@@ -56,12 +62,20 @@
     "all-outputs": true,
     "warp-on-scroll": false,
     "format-urgent": "{num} : {icon} ",
-    "format-active": "{number} : {icon}",
+    "format-active": "Dang",
     "format": "{icon}",
     "format-icons": {
-      "urgent": "",
-      "active": "⭘",
-      "default": ""
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "11": "11"
     }
   },
   "keyboard-state": {
@@ -160,8 +174,8 @@
   "battery": {
     "states": {
       // "good": 95,
-      "warning": 30,
-      "critical": 15
+      "warning": 69,
+      "critical": 30
     },
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
@@ -196,7 +210,7 @@
 
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
 
-    "on-click-middle": "kitty nmtui",
+    "on-click-middle": "alacritty -e nmtui",
 
     "format-ethernet": "󰈀",
     "tooltip-format": "{ifname} via {gwaddr} ",
@@ -236,7 +250,7 @@
     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
   },
   "custom/power": {
-    "format": "",
+    "format": "",
     "tooltip": false,
     "menu": "on-click",
     "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
@@ -272,7 +286,7 @@
     "return-type": "json",
     "hide-empty-text": true,
     "on-click": "playerctl play-pause",
-    "format": "{icon} {text}",
+    "format": "{icon}  {text}",
     "format-icons": {
       "spotify": "",
       "brave": "",

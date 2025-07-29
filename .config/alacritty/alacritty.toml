@@ -1,5 +1,5 @@
 [general]
-import = ["/home/ton3s/dotfiles/.config/alacritty/themes/gruvbox_material.toml"]
+import = ["/home/ton3s/dotfiles/.config/alacritty/themes/rose-pine-moon.toml"]
 
 [window]
 padding = { x = 20, y = 20 }
@@ -8,4 +8,4 @@ padding = { x = 20, y = 20 }
 normal.family = "JetBrainsMono Nerd Font"
 italic.family = "JetBrainsMono Nerd Font"
 bold.family = "JetBrainsMono Nerd Font"
-size = 11
+size = 10.5
