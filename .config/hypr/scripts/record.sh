@@ -3,7 +3,7 @@
 # Kill wf-recorder if recording is already in progress
 pgrep -x "wf-recorder" && \
 pkill -INT -x wf-recorder && \
-notify-send --icon=replay-record-error -h string:wf-recorder:record -t 1000 "Finished Recording" "You can find it in Videos 󰉋"&& pkill -SIGRTMIN+10 waybar && \
+notify-send --icon=simplescreenrecorder-panel -h string:wf-recorder:record -t 3000 "Finished Recording" "You can find it in Videos 󰉋"&& pkill -SIGRTMIN+10 waybar && \
 exit 0
 
 
@@ -26,11 +26,11 @@ if [[ "$REGION" == "" && $1 == "region" ]]; then
 fi
 
 # Recording start countdown
-LAST=$(notify-send --icon=replay-record -h string:wf-recorder:record -t 1500 "Recording in:" "<span color='#e0def4' font='26px'><b>3</b></span>" -p)
+LAST=$(notify-send --icon=simplescreenrecorder-recording -h string:wf-recorder:record -t 1500 "Recording in:" "<span color='#e0def4' font='26px'><b>3</b></span>" -p)
 sleep 1
-LAST=$(notify-send --icon=replay-record -h string:wf-recorder:record -t 1500 "Recording in:" "<span color='#e0def4' font='26px'><b>2</b></span>" -r $LAST -p)
+LAST=$(notify-send --icon=simplescreenrecorder-recording -h string:wf-recorder:record -t 1500 "Recording in:" "<span color='#e0def4' font='26px'><b>2</b></span>" -r $LAST -p)
 sleep 1
-notify-send --icon=replay-record -h string:wf-recorder:record -t 950 "Recording in:" "<span color='#e0def4' font='26px'><b>1</b></span>" -r $LAST
+notify-send --icon=simplescreenrecorder-recording -h string:wf-recorder:record -t 950 "Recording in:" "<span color='#e0def4' font='26px'><b>1</b></span>" -r $LAST
 sleep 1
 
 dateTime=$(date +%m-%d-%Y-%H:%M:%S)

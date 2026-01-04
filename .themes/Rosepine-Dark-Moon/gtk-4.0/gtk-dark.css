@@ -6751,7 +6751,7 @@ flowboxchild.card:not(.category-tile) {
 }
 
 .featured-tile.narrow label.title-1 {
-  font-size: 16pt;
+  font-size: 16px;
 }
 
 .application-details-infobar, .application-details-infobar.info {

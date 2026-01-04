@@ -1,5 +1,5 @@
 [general]
-import = ["/home/ton3s/dotfiles/.config/alacritty/themes/rose-pine-moon.toml"]
+import = ["themes/rose-pine.toml"]
 
 [window]
 padding = { x = 20, y = 20 }

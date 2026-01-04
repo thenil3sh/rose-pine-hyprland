@@ -6,14 +6,14 @@
   "control-center-layer": "overlay",
   "layer-shell": true,
   "cssPriority": "application",
-  "control-center-margin-top": 0,
-  "control-center-margin-bottom": 700,
+  "control-center-margin-top": 700,
+  "control-center-margin-bottom": 0,
   "control-center-margin-right": 0,
   "control-center-margin-left": 0,
   "notification-2fa-action": true,
   "notification-inline-replies": false,
   "notification-icon-size": 64,
-  "notification-body-image-height": 100,
+  "notification-body-image-height": 200,
   "notification-body-image-width": 200,
   "timeout": 10,
   "timeout-low": 5,
@@ -22,7 +22,7 @@
   "relative-timestamps": true,
   "control-center-width": 500,
   "control-center-height": 400,
-  "notification-window-width": 450,
+  "notification-window-width": 350,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
   "transition-time": 200,
@@ -47,12 +47,7 @@
       "app-name": "Spotify"
     }
   },
-  "widgets": [
-    "inhibitors",
-    "title",
-    "dnd",
-    "notifications"
-  ],
+  "widgets": ["inhibitors", "title", "dnd", "notifications"],
   "widget-config": {
     "inhibitors": {
       "text": "Inhibitors",

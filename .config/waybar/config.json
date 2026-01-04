@@ -1,20 +1,21 @@
 // -*- mode: jsonc -*-
 {
-  "name": "overlay",
-  "layer": "overlay",
+  "name": "waybar",
+  "layer": "bottom",
   // "layer": "top", // Waybar at top layer
   "position": "bottom", // Waybar position (top|bottom|left|right)
   "height": 39, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
-  "spacing": 0, // Gaps between modules (4px)
+  "spacing": 8, // Gaps between modules (4px)
   "margin": "0 0 0 8",
   // Choose the order of the modules
   "modules-left": [
     "clock",
     // "custom/waybar_media",
-    "custom/recording_status",
-    "mpd"
-    // "mpris"
+    // "mpd"
+    "mpris",
+    "privacy",
+    "custom/recording_status"
   ],
   "modules-center": [
     // "hyprland/window"
@@ -25,13 +26,12 @@
   ],
   "modules-right": [
     // "idle_inhibitor",
-    "network",
+    // "network",
     "pulseaudio",
     // "power-profiles-daemon",
     // "cpu",
     // "memory",
     // "temperature",
-    "backlight",
     // "keyboard-state",
     //"sway/language",
     "battery",
@@ -143,9 +143,9 @@
     }
   },
   "tray": {
-    // "icons": {
-    //     "discord": ""
-    // },
+    "icons": {
+      "discord": "discord"
+    },
     "spacing": 10,
     "icon-size": 15
   },
@@ -198,7 +198,7 @@
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
     "format-charging": "",
-    "format-plugged": "󰋑",
+    "format-not-charging": "󰋑",
     "format-alt": "{time} {icon}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
@@ -249,7 +249,7 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname}",
     "format-disconnected": "󱎘",
-    "format-alt": "{ifname} : {ipaddr}/{cidr}"
+    "format-alt": "{essid} {icon}"
   },
   "pulseaudio": {
     "spacing": 20,
@@ -299,18 +299,28 @@
   },
   "custom/recording_status": {
     "signal": 10,
-    "exec": "$HOME/.config/waybar/record_state.sh"
+    "return-type": "json",
+    "format": "{text}",
+    "exec": "$HOME/.config/waybar/record_state.sh",
+    "on-click": "$HOME/dotfiles/.config/hypr/scripts/record.sh"
   },
   "mpris": {
-    "format": "{player_icon} {title}",
+    "tooltip-format": " {player_icon} {player} ",
+    "title-len": 30,
+    "format": "{status_icon} {title}",
+    "hide-empty-text": true,
     "player-icons": {
       "default": "▶",
       "mpv": "🎵",
       "brave": "",
-      "spotify": ""
+      "spotify": "",
+      "vlc": "󰕼",
+      "firefox": ""
     },
     "status-icons": {
-      "paused": "⏸"
+      "playing": "",
+      "paused": "",
+      "stopped": ""
     }
     // "ignored-players": ["firefox"]
   },
@@ -325,5 +335,38 @@
       "brave": "",
       "firefox": ""
     }
-  }
+  },
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 14,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      // {
+      //   "type": "audio-out",
+      //   "tooltip": true,
+      //   "tooltip-icon-size": 24
+      // },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ],
+    "ignore-monitor": true,
+    "ignore": [
+      {
+        "type": "audio-in",
+        "name": "cava"
+      },
+      {
+        "type": "screenshare",
+        "name": "obs"
+      }
+    ]
+  },
 }

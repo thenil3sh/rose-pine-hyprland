@@ -12,7 +12,7 @@
 
 #waybar {
     background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0));
-    margin : 0 20px;
+    margin : 0px 20px;
     opacity: 0.85;
 }
 
@@ -21,10 +21,8 @@
 
 #workspaces {
     transition : all cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
-    /* border: 2px solid #a89884; */
+    margin : 8px 0px;
     border-radius: 10px;
-    margin : 0;
-    margin-left: 10px;
     font-size: 12px;
     font-weight: 500;
     padding-left: 5px;
@@ -39,15 +37,15 @@
 
 #workspaces button {
     transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 250ms;
+    margin : 0px 3px;
     border: 1px transparent;
-    color: #908caa;
+    color: #6e6a86;
     font-weight: bolder;
     background-color: transparent;
-    border  : 2px solid #908caa;
+    border  : 2px solid #6e6a86;
     font-size: 12px;
     padding : 0 2px;
     padding-top: 1px;
-    margin: 8px 8px;
     border-radius: 50%;
 }
 
@@ -59,7 +57,6 @@
     padding: 0 20px;
     padding-top: 1px;
     font-size: 12px;
-    margin: 8px 8px;
     color: transparent;
     border-radius: 12px;
     /* font-size : 13px; */
@@ -128,7 +125,6 @@
     padding: 0 20px;
     padding-top: 0px;
     font-size: 12px;
-    margin: 8px 8px;
     color: #c4a7e7;
     border-radius: 12px;
 }
@@ -138,7 +134,6 @@
     /* border: 2px solid #a89884; */
     font-weight : bold;
     font-size : 14px;
-    margin: 6px 8px;
     padding-top : 2px;
     padding-left: 8px;
     padding-right: 14px;
@@ -151,11 +146,9 @@
 }
 
 #wireplumber {
-    margin-bottom: 6px;
-    margin-left: 8px;
+    margin : 5px 0;
     padding-left: 10px;
     padding-right: 10px;
-    /* margin-bottom: 0px; */
     border-radius: 10px;
     transition: none;
     color: #1a1826;
@@ -163,8 +156,8 @@
 }
 
 #battery {
+    margin : 6px 0;
     font-size: 13px;
-    margin: 6px 8px;
     /* border: 2px solid #a89884; */
     padding : 0 10px;
     transition: none;
@@ -177,7 +170,6 @@
 
 #battery:not(.charging) {
     font-size: 13px;
-    margin: 6px 8px;
     padding-top : 1px;
     padding-left: 7px;
     padding-right: 10px;
@@ -185,17 +177,16 @@
     border-width: 10px;
     background: transparent;
     transition: none;
-    color: rgb(235, 111, 146);
-    border : 2px solid rgb(235, 111, 146);
+    color: rgb(196, 167, 231);
+    border : 2px solid rgb(196, 167, 231);
     border-radius: 15px;
 }
 
 
 #battery.discharging {
-    margin : 6px 8px;
     padding : 0 9px;
-    color : rgb(196, 167, 231);
-    border-color : rgb(196, 167, 231);
+    color : #eb6f92;
+    border-color : #eb6f92;
 }
 
 #battery.critical:not(.charging) {
@@ -217,8 +208,6 @@
 }
 
 #backlight {
-    margin-left: 8px;
-    margin : 6px 8px;
     border-radius: 15px;
     color: rgb(62, 143, 176);
     padding-left : 10px;
@@ -229,9 +218,8 @@
 #clock {
     transition : all cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
     border : 2px solid #c4a7e7;
+    margin : 6px 0px;
     color : #c4a7e7;
-    margin : 6px 8px;
-    margin-left : 0px;
     border-radius : 15px;
     padding : 0px 10px;
 }
@@ -242,10 +230,9 @@
     border : 2px solid @foreground;
     color : @foreground;
 }
-#custom-notification {
-    /* border: 2px solid #a89884; */
 
-    margin : 6px 8px;
+#custom-notification {
+    margin : 6px 0px;
     padding-left : 8px;
     padding-right : 11px;
     border-radius: 15px;
@@ -258,10 +245,6 @@
 }
 
 #custom-notification.dnd {
-    /* border: 2px solid #a89884; */
-
-    margin-bottom: 6px;
-    margin-right: 8px;
     padding-left: 10px;
     padding-right: 14px;
     border-radius: 10px;
@@ -272,34 +255,8 @@
     font-weight: 700;
 }
 
-#memory {
-    margin-bottom: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    color: #a89984;
-    background: #fabd2f;
-    /*default: background: #ddb6f2; */
-}
-
-#cpu {
-    margin-bottom: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    color: #161320;
-    background: #b8bb26;
-    /*default: background: #96cdfb; */
-}
-
 #custom-launcher {
     font-size: 24px;
-    margin-bottom: 6px;
-    margin-left: 8px;
     padding-left: 10px;
     padding-right: 5px;
     border-radius: 10px;
@@ -310,8 +267,6 @@
 }
 
 #custom-media {
-    margin-bottom: 6px;
-    margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 10px;
@@ -321,42 +276,36 @@
 }
 
 #pulseaudio {
-    /* border: 2px solid #a89884; */
+    margin : 6px 0;
     font-weight : bold;
-    border : 2px solid rgb(156, 207, 216);
-    margin: 6px  8px;
+    border : 2px solid rgb(144, 140, 170);
     padding : 3px 0px;
     padding-left: 10px;
     padding-right: 15px;
     border-radius: 15px;
     transition: none;
-    color: rgb(156, 207, 216);
+    color: rgb(144, 140, 170);
 }
 
 #custom-power {
     transition : all ease-out 150ms;
-    /* border: 2px solid #a89884; */
-    margin : 6px 8px;
-    margin-right : 0;
+    margin : 6px 0px;
+    padding : 0;
     border : 2px solid #56526e;
-    margin-right: 8px;
     border-radius: 15px;
-    transition: none;
     color: transparent;
-    font-size: 15px;
+    font-size: 8px;
 }
 
 #custom-power:hover {
     transition : all ease-out 150ms;
-    margin : 6px 8px;
     padding-left : 6px;
     padding-right : 10px;
     border : 2px solid #eb6f92;
-    margin-right: 8px;
     border-radius: 15px;
-    transition: none;
     background-color: #eb6f92;
     color:#2a273f;
+    font-size : 15px;
 }
 
 #menu {
@@ -381,9 +330,7 @@
 } */
 
 #tray {
-    /* border: 2px solid #a89884; */
-    margin: 6px 8px;
-    margin-left: 8px;
+    margin : 5px 0px;
     border : 2px solid #e0def4;
     padding-left: 10px;
     padding-right: 10px;
@@ -391,21 +338,57 @@
     transition: none;
 }
 
-#custom-recording_status {
-    /* border: 2px solid #a89884; */
+#custom-recording_status.not_recording {
+    transition : opacity 0.5s ease-out;
+    transition : padding 0.5s ease-out;
+    padding : 0;
+    opacity: 0.0;
+}
+#custom-recording_status.recording {
+    margin : 8px 0px;
     font-size: 15px;
-    margin : 6px 8px;
     padding: 0px 30px;
     border-radius: 15px;
+    opacity : 1.0;
     transition: none;
     color: rgb(235, 111, 146);
     background: transparent;
     border : 2px solid rgb(235, 111, 146);
-    animation-name : record-blink;
-    animation-duration: 750ms;
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
+
+    transition : opacity 0.5s ease-out;
+    transition : padding 0.5s ease-out;
+    animation : record-shake 1.5s linear 0.5s,
+        record-blink cubic-bezier(0.215, 0.610, 0.355, 1) 750ms alternate infinite 1s;
+}
+
+
+@keyframes record-shake {
+    0% {
+        padding: 0px 30px;
+    }
+    20% {
+        padding-left : 40px;
+        padding-right : 20px;
+    }
+    40% {
+        padding-left : 20px;
+        padding-right : 40px;
+    }
+    50% {
+        padding-left : 40px;
+        padding-right : 20px;
+    }
+    60% {
+        padding-left : 20px;
+        padding-right : 40px
+    }
+    80% {
+        padding-left : 40px;
+        padding-right : 20px;
+    }
+    100% {
+        padding : 0 30px;
+    }
 }
 
 @keyframes record-blink {
@@ -421,7 +404,6 @@
     letter-spacing: 0em;
     /* background : #c4a7e7; */
     color : #f6c177;
-    margin : 6px 8px;
     padding : 1px 10px;
     background-size : cover;
     font-size : 12px;
@@ -433,10 +415,37 @@
     transition : ease-out all 250ms;
     background : transparent;
     color : #c4a7e7;
-    margin : 8px;
     padding : 1px 20px;
     background-size : cover;
     font-size : 12px;
     border-radius : 20px;
     border : 1px solid @foreground; 
+}
+
+#privacy {
+    margin : 6px 0;
+    padding : 0 8px;
+    border-radius : 15px;
+    background-color : transparent;
+    border : 2px solid #eb6f92;
+    color : #eb6f92;
+    animation : record-blink 2.5s ease-in-out alternate infinite;
+}
+
+#mpris {
+    border : 2px solid;
+    padding : 0px 12px;
+    margin : 6px 0;
+    border-radius : 15px;
+    transition : color 0.5s linear, border-color 0.5s linear;
+}
+
+#mpris.playing {
+    color : #9ccfd8;
+    border-color :#9ccfd8;
+}
+
+#mpris.paused {
+    color : #908caa;
+    border-color : #908caa;
 }

@@ -11,6 +11,8 @@
 CONFIGURATION 📝‼️
 */
 
+/* @import url(midnight.css); */
+
 :root {
     /* 1=False ; 0=True */
     --windows-hover: 1;
@@ -493,6 +495,12 @@ path.unreadPillCapStroke__908e2 {
 .toggleExpandSection__4d95d,
 .openFullPreviewSection__4d95d {
     color: var(--gold) !important;
+}
+
+.controlSection_bfe55a:hover 
+.horizontal__7c0ba
+{
+    background-color : transparent;
 }
 
 .codeIcon__4d95d {

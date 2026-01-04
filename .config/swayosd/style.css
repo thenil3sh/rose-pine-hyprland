@@ -1,16 +1,19 @@
-window {
-    padding: 0;
-    border-radius: 10px;
-    border: solid 10px #a89884;
-    background: alpha(#282828, 0.75);
+window#osd {
+    border-radius: 20px;
+    border: none;
+    background: rgba(42, 39, 63, 0.6);
 }
 
 #container {
-    margin: 10px;
+    margin: 12px 30px;
 }
 
-image, label {
-    color: @theme_fg_color;
+image,
+label {
+    color: rgb(196, 167, 231, 0.7);
+    opacity : 0.8;
+    font-family : 'DM Sans';
+    font-weight : 400;
 }
 
 progressbar:disabled,
@@ -19,20 +22,22 @@ image:disabled {
 }
 
 progressbar {
-    min-height: 5px;
-    border-radius: 999px;
+    min-height: 10px;
+    border-radius: 5px;
     background: transparent;
     border: none;
 }
+
 trough {
     min-height: inherit;
     border-radius: inherit;
     border: none;
-    background: alpha(@theme_fg_color, 0.5);
+    background: rgba(68, 65, 90, 0.8);
 }
+
 progress {
     min-height: inherit;
     border-radius: inherit;
     border: none;
-    background: @theme_fg_color;
+    background: rgba(196, 167, 231, 0.8);
 }

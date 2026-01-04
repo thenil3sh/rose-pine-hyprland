@@ -25,4 +25,4 @@ else
   grim -
 fi | wl-copy && \
 wl-paste > ~/Pictures/Screenshots/Screenshot-"$(date +%F_%T)".png && \
-notify-send 'Screenshot taken' 'Image copied to clipboard' --icon=$icon -t 5000
+notify-send 'Screenshot taken' 'Image copied to clipboard' --icon=$icon -t 2000
