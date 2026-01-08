@@ -1,73 +1,55 @@
 * {
-    font-size : 12px;
-    font-weight : bolder;
-    /* border: 2px; */
-    /* border : none; */
-    border-radius: 8px;
     font-family: "JetbrainsMono Nerd Font";
-    /* color : #ebdbb2; */
-    /* font-size: 15px; */
-    min-height: 15px;
+    font-weight: bolder;
 }
 
+@define-color bg_color rgba(25, 23, 36, 0.65);
+@define-color iris rgb(196, 167, 231);
+@define-color foam rgb(156, 207, 216);
+@define-color muted rgb(110, 106, 134);
+@define-color pine rgb(49, 116, 143);
+
 #waybar {
-    background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0));
-    margin : 0px 20px;
-    opacity: 0.85;
+    background: transparent;
+    opacity: 1;
 }
 
 
 
 
 #workspaces {
+    min-height: 0;
     transition : all cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
-    margin : 8px 0px;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: 500;
-    padding-left: 5px;
-    padding-right: 10px;
-    background: transparent;
-    /* background: #161320; */
+    border-radius: 20px 8px 8px 20px;
+    background: @bg_color;
     transition: none;
+    padding : 0px 10px;
+    font-size : 0px;
 }
-
-
-
 
 #workspaces button {
     transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 250ms;
-    margin : 0px 3px;
-    border: 1px transparent;
-    color: #6e6a86;
-    font-weight: bolder;
-    background-color: transparent;
-    border  : 2px solid #6e6a86;
-    font-size: 12px;
-    padding : 0 2px;
-    padding-top: 1px;
-    border-radius: 50%;
+    color : #907aa9;
+    padding : 0;
+    border-radius : 20px;
+    font-size : 12px;
+    margin : 0 10px;
 }
 
 #workspaces button.active {
     transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 250ms;
-    border: 2px #c4a7e7 solid;
-    border-radius: 50%;
-    background : transparent;
-    padding: 0 20px;
-    padding-top: 1px;
-    font-size: 12px;
-    color: transparent;
-    border-radius: 12px;
-    /* font-size : 13px; */
+    border-radius: 30px;
+    color : #575279;
+    font-size : 24px;
 }
 
 #workspaces button.urgent {
-    color : #ebbcba;
-    border-color : #ebbcba;
-    padding : 0px 20px;
+    color : rgb(180, 99, 122);
+    border-color : rgb(180, 99, 122);
     border-radius : 15px;
+    border : 2px solid;
     animation-name : urgent-shake;
+    padding : 0 20px;
     animation-timing-function: linear;
     animation-duration: 750ms;
     animation-delay: 1s;
@@ -119,14 +101,10 @@
 
 #workspaces button:hover {
     transition: all ease-out 150ms;
-    border: 2px solid #c4a7e7;
-    border-radius: 50%;
-    background: transparent;
-    padding: 0 20px;
-    padding-top: 0px;
+    border: 2px solid rgb(144, 122, 169);
     font-size: 12px;
-    color: #c4a7e7;
-    border-radius: 12px;
+    color: rgb(144, 122, 169);
+    background-color: @bg_color;
 }
 
 
@@ -146,7 +124,6 @@
 }
 
 #wireplumber {
-    margin : 5px 0;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 10px;
@@ -156,43 +133,31 @@
 }
 
 #battery {
-    margin : 6px 0;
+    background-color: @bg_color;
     font-size: 13px;
     /* border: 2px solid #a89884; */
-    padding : 0 10px;
+    padding : 0 15px;
     transition: none;
-    border-radius: 15px;
-    background: transparent;
-    border : 2px solid rgb(156, 207, 216);
-    color : rgb(156, 207, 216);
+    border-radius: 8px;
+    color : @foam;
 }
 
 
 #battery:not(.charging) {
-    font-size: 13px;
-    padding-top : 1px;
-    padding-left: 7px;
-    padding-right: 10px;
-    border-radius: 10px;
-    border-width: 10px;
-    background: transparent;
+    font-size: 15px;
+    padding-left : 12px;
+    padding-right : 15px;
     transition: none;
-    color: rgb(196, 167, 231);
-    border : 2px solid rgb(196, 167, 231);
-    border-radius: 15px;
+    color : @pine;
 }
 
 
 #battery.discharging {
-    padding : 0 9px;
-    color : #eb6f92;
-    border-color : #eb6f92;
+    color : #b4637a
 }
 
 #battery.critical:not(.charging) {
-    background : transparent;
-    border : 2px solid #eb6f92;
-    color: #eb6f92;
+    color: #b4637a;
     animation-name: blink;
     animation-duration: 750ms;
     animation-timing-function: ease-in-out;
@@ -202,8 +167,8 @@
 
 @keyframes blink {
     to {
-        background-color: #eb6f92;
-        color: #161320;
+        background-color: #b4637a;
+        color: @bg_color;
     }
 }
 
@@ -217,29 +182,20 @@
 
 #clock {
     transition : all cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
-    border : 2px solid #c4a7e7;
-    margin : 6px 0px;
-    color : #c4a7e7;
-    border-radius : 15px;
-    padding : 0px 10px;
-}
-
-#clock:hover {
-    transition : all cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
-    background-color: transparent;
-    border : 2px solid @foreground;
-    color : @foreground;
+    background-color : @bg_color;
+    font-weight: bolder;
+    color : @iris;
+    border-radius : 8px 20px 20px 8px;
+    padding-left: 12px;
+    padding-right: 15px;
 }
 
 #custom-notification {
-    margin : 6px 0px;
-    padding-left : 8px;
-    padding-right : 11px;
-    border-radius: 15px;
-    transition: none;
-    color: #f6c177;
-    border : 2px solid #f6c177;
-    background: transparent;
+    padding-left : 12px;
+    padding-right : 15px;
+    border-radius: 8px 20px 20px 8px;
+    color: @muted;
+    background: @bg_color;
     font-size: 15px;
     font-weight: 700;
 }
@@ -276,22 +232,18 @@
 }
 
 #pulseaudio {
-    margin : 6px 0;
-    font-weight : bold;
-    border : 2px solid rgb(144, 140, 170);
-    padding : 3px 0px;
-    padding-left: 10px;
-    padding-right: 15px;
-    border-radius: 15px;
+    background-color: @bg_color;
+    border-radius: 20px 8px 8px 20px;
+    padding-left : 12px;
+    padding-right :  15px;
     transition: none;
-    color: rgb(144, 140, 170);
+    color: @iris;
 }
 
 #custom-power {
     transition : all ease-out 150ms;
-    margin : 6px 0px;
     padding : 0;
-    border : 2px solid #56526e;
+    background : @bg_color;
     border-radius: 15px;
     color: transparent;
     font-size: 8px;
@@ -301,9 +253,8 @@
     transition : all ease-out 150ms;
     padding-left : 6px;
     padding-right : 10px;
-    border : 2px solid #eb6f92;
-    border-radius: 15px;
-    background-color: #eb6f92;
+    border-radius: 8px;
+    background-color: @bg_color;
     color:#2a273f;
     font-size : 15px;
 }
@@ -330,12 +281,16 @@
 } */
 
 #tray {
-    margin : 5px 0px;
-    border : 2px solid #e0def4;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 15px;
+    background-color: @bg_color;
+    border-radius : 8px 8px 8px 8px;
+    padding: 0px 15px;
     transition: none;
+}
+#tray > .passive,
+#tray > .active,
+#tray > .needs-attention {
+    color : rgb(40, 105, 131);
+    padding : 0;
 }
 
 #custom-recording_status.not_recording {
@@ -344,21 +299,19 @@
     padding : 0;
     opacity: 0.0;
 }
+
 #custom-recording_status.recording {
-    margin : 8px 0px;
+    border : solid 2px @bg_color;
     font-size: 15px;
     padding: 0px 30px;
-    border-radius: 15px;
+    border-radius: 8px;
     opacity : 1.0;
     transition: none;
-    color: rgb(235, 111, 146);
-    background: transparent;
-    border : 2px solid rgb(235, 111, 146);
-
-    transition : opacity 0.5s ease-out;
+    color: rgb(180, 99, 122);
+    background-color: @bg_color;
     transition : padding 0.5s ease-out;
     animation : record-shake 1.5s linear 0.5s,
-        record-blink cubic-bezier(0.215, 0.610, 0.355, 1) 750ms alternate infinite 1s;
+        record-blink ease-in-out 1.5s alternate infinite 1s;
 }
 
 
@@ -393,8 +346,8 @@
 
 @keyframes record-blink {
     to {
-        color : #161320;
-        background: rgb(235, 111, 146);
+        color : rgb(250, 244, 237);
+        background: rgb(180, 99, 122);
     }
 }
 
@@ -423,29 +376,24 @@
 }
 
 #privacy {
-    margin : 6px 0;
-    padding : 0 8px;
-    border-radius : 15px;
-    background-color : transparent;
-    border : 2px solid #eb6f92;
-    color : #eb6f92;
+    padding : 0 15px;
+    border-radius : 8px;
+    background-color: @bg_color;
+    color : rgb(180, 99, 122);
     animation : record-blink 2.5s ease-in-out alternate infinite;
 }
 
 #mpris {
-    border : 2px solid;
+    background: @bg_color;
     padding : 0px 12px;
-    margin : 6px 0;
-    border-radius : 15px;
+    border-radius : 20px;
     transition : color 0.5s linear, border-color 0.5s linear;
 }
 
 #mpris.playing {
-    color : #9ccfd8;
-    border-color :#9ccfd8;
+    color : #286983;
 }
 
 #mpris.paused {
-    color : #908caa;
-    border-color : #908caa;
+    color : #797593;
 }

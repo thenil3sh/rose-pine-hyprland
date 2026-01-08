@@ -3,49 +3,49 @@
   "name": "waybar",
   "layer": "bottom",
   // "layer": "top", // Waybar at top layer
-  "position": "bottom", // Waybar position (top|bottom|left|right)
-  "height": 39, // Waybar height (to be removed for auto height)
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 35, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
-  "spacing": 8, // Gaps between modules (4px)
-  "margin": "0 0 0 8",
+  "spacing": 5, // Gaps between modules (4px)
+  "margin": "7 10 3 10",
   // Choose the order of the modules
   "modules-left": [
     "clock",
     // "custom/waybar_media",
     // "mpd"
-    "mpris",
-    "privacy",
-    "custom/recording_status"
+    "mpris"
   ],
   "modules-center": [
     // "hyprland/window"
-    "hyprland/workspaces",
     // "custom/media",
     // "mpd",
+    "pulseaudio",
+    "custom/recording_status",
+    "privacy",
+    "battery",
+    "tray",
+    "custom/power",
     "custom/notification"
   ],
   "modules-right": [
+    "hyprland/workspaces"
     // "idle_inhibitor",
     // "network",
-    "pulseaudio",
     // "power-profiles-daemon",
     // "cpu",
     // "memory",
     // "temperature",
     // "keyboard-state",
     //"sway/language",
-    "battery",
     // "battery#bat2",
-    "tray",
-    "custom/power"
   ],
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
       "notification": "",
-      "none": "",
-      "dnd-notification": "",
+      "none": "",
+      "dnd-notification": "",
       "dnd-none": "",
       "inhibited-notification": "",
       "inhibited-none": "",
@@ -67,17 +67,8 @@
     "format-active": "Dang",
     "format": "{icon}",
     "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10": "10",
-      "11": "11"
+      "active": "",
+      "default" : ""
     }
   },
   "keyboard-state": {
@@ -144,10 +135,11 @@
   },
   "tray": {
     "icons": {
-      "discord": "discord"
+      "discord": "caffeine-cup-full",
+      "easyeffects" : "banshee-panel"
     },
     "spacing": 10,
-    "icon-size": 15
+    "icon-size": 20
   },
   "clock": {
     "timezone": "Asia/Calcutta",
@@ -192,8 +184,8 @@
   "battery": {
     "states": {
       // "good": 95,
-      "warning": 69,
-      "critical": 30
+      "warning": 60,
+      "critical": 25
     },
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
@@ -301,8 +293,9 @@
     "signal": 10,
     "return-type": "json",
     "format": "{text}",
+    "hide-empty-text" : true,
     "exec": "$HOME/.config/waybar/record_state.sh",
-    "on-click": "$HOME/dotfiles/.config/hypr/scripts/record.sh"
+    "on-click": "$HOME/.config/hypr/scripts/record.sh"
   },
   "mpris": {
     "tooltip-format": " {player_icon} {player} ",

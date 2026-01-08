@@ -23,7 +23,7 @@
  * Base States *
  ***************/
 .background {
-  background-color: #232136;
+  background-color: rgba(0,0,0,0);
   color: #faf4ed;
 }
 
