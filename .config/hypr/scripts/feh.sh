@@ -1,8 +1,5 @@
 #!/bin/bash
 
-MAX_WIDTH=1200
-MAX_HEIGHT=800
-
 IMG="$1"
 
 read IMG_WIDTH IMG_HEIGHT <<<"$(identify -format "%w %h" "$IMG")" 

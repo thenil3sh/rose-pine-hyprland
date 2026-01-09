@@ -1,6 +1,6 @@
 * {
-    font-family: "JetbrainsMono Nerd Font";
-    font-weight: bolder;
+  font-family: "JetbrainsMono Nerd Font";
+  font-weight: bolder;
 }
 
 @define-color bg_color rgba(25, 23, 36, 0.65);
@@ -10,264 +10,273 @@
 @define-color pine rgb(49, 116, 143);
 
 #waybar {
-    background: transparent;
-    opacity: 1;
+  background: transparent;
+  opacity: 1;
 }
 
 
 
 
 #workspaces {
-    min-height: 0;
-    transition : all cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
-    border-radius: 20px 8px 8px 20px;
-    background: @bg_color;
-    transition: none;
-    padding : 0px 10px;
-    font-size : 0px;
+  min-height: 0;
+  transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
+  border-radius: 20px 8px 8px 20px;
+  background: @bg_color;
+  transition: none;
+  padding: 0px 10px;
+  font-size: 0px;
 }
 
 #workspaces button {
-    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 250ms;
-    color : #907aa9;
-    padding : 0;
-    border-radius : 20px;
-    font-size : 12px;
-    margin : 0 10px;
+  transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 250ms;
+  color: @iris;
+  padding: 0;
+  border-radius: 20px;
+  font-size: 12px;
+  margin: 0 10px;
 }
 
 #workspaces button.active {
-    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 250ms;
-    border-radius: 30px;
-    color : #575279;
-    font-size : 24px;
+  transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 250ms;
+  border-radius: 30px;
+  color: @iris;
+  font-size: 24px;
 }
 
 #workspaces button.urgent {
-    color : rgb(180, 99, 122);
-    border-color : rgb(180, 99, 122);
-    border-radius : 15px;
-    border : 2px solid;
-    animation-name : urgent-shake;
-    padding : 0 20px;
-    animation-timing-function: linear;
-    animation-duration: 750ms;
-    animation-delay: 1s;
-} 
+  color: rgb(180, 99, 122);
+  border-color: rgb(180, 99, 122);
+  border-radius: 15px;
+  border: 2px solid;
+  animation-name: urgent-shake;
+  padding: 0 20px;
+  animation-timing-function: linear;
+  animation-duration: 750ms;
+  animation-delay: 1s;
+}
 
 @keyframes urgent-shake {
-    0% {
-        padding: 0px 20px;
-    }
-    20% {
-        padding-left : 25px;
-        padding-right : 15px;
-    }
-    40% {
-        padding-left : 15px;
-        padding-right : 25px;
-    }
-    50% {
-        padding-left : 25px;
-        padding-right : 15px;
-    }
-    60% {
-        padding-left : 15px;
-        padding-right : 25px
-    }
-    80% {
-        padding-left : 25px;
-        padding-right : 15px;
-    }
-    100% {
-        padding : 0 20px;
-    }
+  0% {
+    padding: 0px 20px;
+  }
+
+  20% {
+    padding-left: 25px;
+    padding-right: 15px;
+  }
+
+  40% {
+    padding-left: 15px;
+    padding-right: 25px;
+  }
+
+  50% {
+    padding-left: 25px;
+    padding-right: 15px;
+  }
+
+  60% {
+    padding-left: 15px;
+    padding-right: 25px
+  }
+
+  80% {
+    padding-left: 25px;
+    padding-right: 15px;
+  }
+
+  100% {
+    padding: 0 20px;
+  }
 }
 
 @keyframes delay-animation {
   0% {
     opacity: 1;
   }
+
   50% {
     opacity: 1;
   }
+
   50.01% {
     opacity: 1;
   }
+
   100% {
     opacity: 1;
   }
 }
 
 #workspaces button:hover {
-    transition: all ease-out 150ms;
-    border: 2px solid rgb(144, 122, 169);
-    font-size: 12px;
-    color: rgb(144, 122, 169);
-    background-color: @bg_color;
+  transition: all ease-out 150ms;
+  border: 2px solid rgb(144, 122, 169);
+  font-size: 12px;
+  color: rgb(144, 122, 169);
+  background-color: @bg_color;
 }
 
 
 #network {
-    /* border: 2px solid #a89884; */
-    font-weight : bold;
-    font-size : 14px;
-    padding-top : 2px;
-    padding-left: 8px;
-    padding-right: 14px;
-    border-radius: 15px;
-    transition: none;
-    color: #ea9a97;
-    border : 2px solid #ea9a97 ;
-    /*default: background: #bd93f9;*/
-    transition: width 0.5s ease-in-out;
+  /* border: 2px solid #a89884; */
+  font-weight: bold;
+  font-size: 14px;
+  padding-top: 2px;
+  padding-left: 8px;
+  padding-right: 14px;
+  border-radius: 15px;
+  transition: none;
+  color: #ea9a97;
+  border: 2px solid #ea9a97;
+  /*default: background: #bd93f9;*/
+  transition: width 0.5s ease-in-out;
 }
 
 #wireplumber {
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    color: #1a1826;
-    background: #fae3b0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  color: #1a1826;
+  background: #fae3b0;
 }
 
 #battery {
-    background-color: @bg_color;
-    font-size: 13px;
-    /* border: 2px solid #a89884; */
-    padding : 0 15px;
-    transition: none;
-    border-radius: 8px;
-    color : @foam;
+  background-color: @bg_color;
+  font-size: 13px;
+  /* border: 2px solid #a89884; */
+  padding: 0 15px;
+  transition: none;
+  border-radius: 8px;
+  color: @foam;
 }
 
 
 #battery:not(.charging) {
-    font-size: 15px;
-    padding-left : 12px;
-    padding-right : 15px;
-    transition: none;
-    color : @pine;
+  font-size: 15px;
+  padding-left: 12px;
+  padding-right: 15px;
+  transition: none;
+  color: @pine;
 }
 
 
 #battery.discharging {
-    color : #b4637a
+  color: #b4637a
 }
 
 #battery.critical:not(.charging) {
-    color: #b4637a;
-    animation-name: blink;
-    animation-duration: 750ms;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  color: #b4637a;
+  animation-name: blink;
+  animation-duration: 750ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 @keyframes blink {
-    to {
-        background-color: #b4637a;
-        color: @bg_color;
-    }
+  to {
+    background-color: #b4637a;
+    color: @bg_color;
+  }
 }
 
 #backlight {
-    border-radius: 15px;
-    color: rgb(62, 143, 176);
-    padding-left : 10px;
-    padding-right : 13px;
-    border : 2px solid rgb(62, 143, 176);
+  border-radius: 15px;
+  color: rgb(62, 143, 176);
+  padding-left: 10px;
+  padding-right: 13px;
+  border: 2px solid rgb(62, 143, 176);
 }
 
 #clock {
-    transition : all cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
-    background-color : @bg_color;
-    font-weight: bolder;
-    color : @iris;
-    border-radius : 8px 20px 20px 8px;
-    padding-left: 12px;
-    padding-right: 15px;
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
+  background-color: @bg_color;
+  font-weight: bolder;
+  color: @iris;
+  border-radius: 8px 20px 20px 8px;
+  padding-left: 12px;
+  padding-right: 15px;
 }
 
 #custom-notification {
-    padding-left : 12px;
-    padding-right : 15px;
-    border-radius: 8px 20px 20px 8px;
-    color: @muted;
-    background: @bg_color;
-    font-size: 15px;
-    font-weight: 700;
+  padding-left: 12px;
+  padding-right: 15px;
+  border-radius: 8px 20px 20px 8px;
+  color: @muted;
+  background: @bg_color;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 #custom-notification.dnd {
-    padding-left: 10px;
-    padding-right: 14px;
-    border-radius: 10px;
-    transition: none;
-    color: #a89884;
-    background: #292828;
-    font-size: 15px;
-    font-weight: 700;
+  padding-left: 10px;
+  padding-right: 14px;
+  border-radius: 10px;
+  transition: none;
+  color: #a89884;
+  background: #292828;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 #custom-launcher {
-    font-size: 24px;
-    padding-left: 10px;
-    padding-right: 5px;
-    border-radius: 10px;
-    transition: none;
-    color: #fe8019;
-    /*default: color: #89dceb; */
-    background: #161320;
+  font-size: 24px;
+  padding-left: 10px;
+  padding-right: 5px;
+  border-radius: 10px;
+  transition: none;
+  color: #fe8019;
+  /*default: color: #89dceb; */
+  background: #161320;
 }
 
 #custom-media {
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    color: #161320;
-    background: #f2cdcd;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  color: #161320;
+  background: #f2cdcd;
 }
 
 #pulseaudio {
-    background-color: @bg_color;
-    border-radius: 20px 8px 8px 20px;
-    padding-left : 12px;
-    padding-right :  15px;
-    transition: none;
-    color: @iris;
+  background-color: @bg_color;
+  border-radius: 20px 8px 8px 20px;
+  padding-left: 12px;
+  padding-right: 15px;
+  transition: none;
+  color: @iris;
 }
 
 #custom-power {
-    transition : all ease-out 150ms;
-    padding : 0;
-    background : @bg_color;
-    border-radius: 15px;
-    color: transparent;
-    font-size: 8px;
+  transition: all ease-out 150ms;
+  padding: 0;
+  background: @bg_color;
+  border-radius: 15px;
+  color: transparent;
+  font-size: 8px;
 }
 
 #custom-power:hover {
-    transition : all ease-out 150ms;
-    padding-left : 6px;
-    padding-right : 10px;
-    border-radius: 8px;
-    background-color: @bg_color;
-    color:#2a273f;
-    font-size : 15px;
+  transition: all ease-out 150ms;
+  padding-left: 6px;
+  padding-right: 10px;
+  border-radius: 8px;
+  background-color: @bg_color;
+  color: #2a273f;
+  font-size: 15px;
 }
 
 #menu {
-    border-radius: 0px;
-    background: #292828;
-    min-width: 10px;
-    color: #ebdbb2;
+  border-radius: 0px;
+  background: #292828;
+  min-width: 10px;
+  color: #ebdbb2;
 }
 
 #menuitem {
-    border-radius: 15px;
+  border-radius: 15px;
 }
 
 /* #menu-actions {
@@ -281,119 +290,126 @@
 } */
 
 #tray {
-    background-color: @bg_color;
-    border-radius : 8px 8px 8px 8px;
-    padding: 0px 15px;
-    transition: none;
+  background-color: @bg_color;
+  border-radius: 8px 8px 8px 8px;
+  padding: 0px 15px;
+  transition: none;
 }
-#tray > .passive,
-#tray > .active,
-#tray > .needs-attention {
-    color : rgb(40, 105, 131);
-    padding : 0;
+
+#tray>.passive,
+#tray>.active,
+#tray>.needs-attention {
+  color: rgb(40, 105, 131);
+  padding: 0;
 }
 
 #custom-recording_status.not_recording {
-    transition : opacity 0.5s ease-out;
-    transition : padding 0.5s ease-out;
-    padding : 0;
-    opacity: 0.0;
+  transition: opacity 0.5s ease-out;
+  transition: padding 0.5s ease-out;
+  padding: 0;
+  opacity: 0.0;
 }
 
 #custom-recording_status.recording {
-    border : solid 2px @bg_color;
-    font-size: 15px;
-    padding: 0px 30px;
-    border-radius: 8px;
-    opacity : 1.0;
-    transition: none;
-    color: rgb(180, 99, 122);
-    background-color: @bg_color;
-    transition : padding 0.5s ease-out;
-    animation : record-shake 1.5s linear 0.5s,
-        record-blink ease-in-out 1.5s alternate infinite 1s;
+  border: solid 2px @bg_color;
+  font-size: 15px;
+  padding: 0px 30px;
+  border-radius: 8px;
+  opacity: 1.0;
+  transition: none;
+  color: rgb(180, 99, 122);
+  background-color: @bg_color;
+  transition: padding 0.5s ease-out;
+  animation: record-shake 1.5s linear 0.5s,
+    record-blink ease-in-out 1.5s alternate infinite 1s;
 }
 
 
 @keyframes record-shake {
-    0% {
-        padding: 0px 30px;
-    }
-    20% {
-        padding-left : 40px;
-        padding-right : 20px;
-    }
-    40% {
-        padding-left : 20px;
-        padding-right : 40px;
-    }
-    50% {
-        padding-left : 40px;
-        padding-right : 20px;
-    }
-    60% {
-        padding-left : 20px;
-        padding-right : 40px
-    }
-    80% {
-        padding-left : 40px;
-        padding-right : 20px;
-    }
-    100% {
-        padding : 0 30px;
-    }
+  0% {
+    padding: 0px 30px;
+  }
+
+  20% {
+    padding-left: 40px;
+    padding-right: 20px;
+  }
+
+  40% {
+    padding-left: 20px;
+    padding-right: 40px;
+  }
+
+  50% {
+    padding-left: 40px;
+    padding-right: 20px;
+  }
+
+  60% {
+    padding-left: 20px;
+    padding-right: 40px
+  }
+
+  80% {
+    padding-left: 40px;
+    padding-right: 20px;
+  }
+
+  100% {
+    padding: 0 30px;
+  }
 }
 
 @keyframes record-blink {
-    to {
-        color : rgb(250, 244, 237);
-        background: rgb(180, 99, 122);
-    }
+  to {
+    color: rgb(250, 244, 237);
+    background: rgb(180, 99, 122);
+  }
 }
 
 #custom-waybar_media {
-    font-weight : bold;
-    transition : ease-out all 250ms;
-    letter-spacing: 0em;
-    /* background : #c4a7e7; */
-    color : #f6c177;
-    padding : 1px 10px;
-    background-size : cover;
-    font-size : 12px;
-    border-radius : 20px;
-    border : 2px #f6c177 solid;
+  font-weight: bold;
+  transition: ease-out all 250ms;
+  letter-spacing: 0em;
+  /* background : #c4a7e7; */
+  color: #f6c177;
+  padding: 1px 10px;
+  background-size: cover;
+  font-size: 12px;
+  border-radius: 20px;
+  border: 2px #f6c177 solid;
 }
 
 #custom-waybar_media:hover {
-    transition : ease-out all 250ms;
-    background : transparent;
-    color : #c4a7e7;
-    padding : 1px 20px;
-    background-size : cover;
-    font-size : 12px;
-    border-radius : 20px;
-    border : 1px solid @foreground; 
+  transition: ease-out all 250ms;
+  background: transparent;
+  color: #c4a7e7;
+  padding: 1px 20px;
+  background-size: cover;
+  font-size: 12px;
+  border-radius: 20px;
+  border: 1px solid @foreground;
 }
 
 #privacy {
-    padding : 0 15px;
-    border-radius : 8px;
-    background-color: @bg_color;
-    color : rgb(180, 99, 122);
-    animation : record-blink 2.5s ease-in-out alternate infinite;
+  padding: 0 15px;
+  border-radius: 8px;
+  background-color: @bg_color;
+  color: rgb(180, 99, 122);
+  animation: record-blink 2.5s ease-in-out alternate infinite;
 }
 
 #mpris {
-    background: @bg_color;
-    padding : 0px 12px;
-    border-radius : 20px;
-    transition : color 0.5s linear, border-color 0.5s linear;
+  background: @bg_color;
+  padding: 0px 12px;
+  border-radius: 20px;
+  transition: color 0.5s linear, border-color 0.5s linear;
 }
 
 #mpris.playing {
-    color : #286983;
+  color: #286983;
 }
 
 #mpris.paused {
-    color : #797593;
+  color: #797593;
 }
