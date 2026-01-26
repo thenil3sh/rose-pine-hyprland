@@ -1,5 +1,5 @@
-# RosePine dotfiles
-A backup for my Rose Pine themed dotfiles (hyprland)
+# Rosé Pine dotfiles
+A backup for my hyprland `~/.config`
 
 > [!IMPORTANT]  
 > Don't expect this to work, out of the box...\
