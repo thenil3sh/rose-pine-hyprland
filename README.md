@@ -3,7 +3,7 @@ A backup for my hyprland `~/.config`
 
 > [!IMPORTANT]  
 > Don't expect this to work, out of the box...\
-> Neither I can if this can mess up with your configs.
+> Neither I can assure if this can mess up with your configs.
 
 > [!TIP]
 > Go apply [Rosé Pine](https://rosepinetheme.com/) theme yourself, lol
