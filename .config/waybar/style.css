@@ -1,9 +1,9 @@
 * {
   font-family: "JetbrainsMono Nerd Font";
-  font-weight: bolder;
+  font-weight: bold;
 }
 
-@define-color bg_color rgba(25, 23, 36, 0.65);
+@define-color bg_color rgba(25, 23, 36, 0.8);
 @define-color iris rgb(196, 167, 231);
 @define-color foam rgb(156, 207, 216);
 @define-color muted rgb(110, 106, 134);
@@ -47,6 +47,7 @@
   color: rgb(180, 99, 122);
   border-color: rgb(180, 99, 122);
   border-radius: 15px;
+  margin : 3px 0px;
   border: 2px solid;
   animation-name: urgent-shake;
   padding: 0 20px;
@@ -119,7 +120,6 @@
 
 #network {
   /* border: 2px solid #a89884; */
-  font-weight: bold;
   font-size: 14px;
   padding-top: 2px;
   padding-left: 8px;
@@ -192,7 +192,6 @@
 #clock {
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
   background-color: @bg_color;
-  font-weight: bolder;
   color: @iris;
   border-radius: 8px 20px 20px 8px;
   padding-left: 12px;
@@ -206,7 +205,6 @@
   color: @muted;
   background: @bg_color;
   font-size: 15px;
-  font-weight: 700;
 }
 
 #custom-notification.dnd {
@@ -217,7 +215,6 @@
   color: #a89884;
   background: #292828;
   font-size: 15px;
-  font-weight: 700;
 }
 
 #custom-launcher {
@@ -301,6 +298,7 @@
 #tray>.needs-attention {
   color: rgb(40, 105, 131);
   padding: 0;
+  opacity: 0.65;
 }
 
 #custom-recording_status.not_recording {
@@ -362,13 +360,12 @@
 
 @keyframes record-blink {
   to {
-    color: rgb(250, 244, 237);
+    color: #191724;
     background: rgb(180, 99, 122);
   }
 }
 
 #custom-waybar_media {
-  font-weight: bold;
   transition: ease-out all 250ms;
   letter-spacing: 0em;
   /* background : #c4a7e7; */
@@ -396,6 +393,7 @@
   border-radius: 8px;
   background-color: @bg_color;
   color: rgb(180, 99, 122);
+  border : 2px solid @bg_color;
   animation: record-blink 2.5s ease-in-out alternate infinite;
 }
 
@@ -407,9 +405,9 @@
 }
 
 #mpris.playing {
-  color: #286983;
+  color: @foam;
 }
 
 #mpris.paused {
-  color: #797593;
+  color: @muted;
 }

@@ -11,4 +11,4 @@ set statusbar-v-padding		5
 map x toggle_statusbar scrollbar
 map f toggle_fullscreen
 set double-click-follow     "false"
-include rose-pine-moon
+include rose-pine

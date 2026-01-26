@@ -300,7 +300,7 @@
   "mpris": {
     "tooltip-format": " {player_icon} {player} ",
     "title-len": 30,
-    "format": "{status_icon} {title}",
+    "format": "{player_icon}  {title}",
     "hide-empty-text": true,
     "player-icons": {
       "default": "▶",
@@ -315,7 +315,6 @@
       "paused": "",
       "stopped": ""
     }
-    // "ignored-players": ["firefox"]
   },
   "custom/waybar_media": {
     "exec": "/home/ton3s/.config/waybar/media_status.sh",
