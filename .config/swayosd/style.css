@@ -10,7 +10,7 @@ window#osd {
 
 image,
 label {
-    color: rgb(196, 167, 231, 0.7);
+    color: rgba(196, 167, 231, 0.7);
     opacity : 0.8;
     font-family : 'DM Sans';
     font-weight : 400;

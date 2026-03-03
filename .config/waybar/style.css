@@ -3,7 +3,7 @@
   font-weight: bold;
 }
 
-@define-color bg_color rgba(25, 23, 36, 0.8);
+@define-color bg_color rgba(25, 23, 36, 0.9);
 @define-color iris rgb(196, 167, 231);
 @define-color foam rgb(156, 207, 216);
 @define-color muted rgb(110, 106, 134);
