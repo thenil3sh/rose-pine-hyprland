@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-exec systemctl reboot
+/usr/bin/hyprshutdown -p "reboot"

@@ -1,24 +1,24 @@
 {
-  "label": "shutdown",
-  "action": "/usr/bin/vspipehyprshutdown -p %h/.config/wlogout/poweroff.sh",
-  "text": "Shutdown",
-  "keybind": "s"
-}
-{
-  "label": "hibernate",
-  "action": "systemctl hibernate",
-  "text": "Hibernate",
+  "label": "hyprshutdown",
+  "action": "/usr/bin/hyprshutdown",
+  "text": "Hypr Shutdown",
   "keybind": "h"
 }
 {
   "label": "logout",
-  "action": "/usr/bin/hyprshutdown -p %h/.config/wlogout/logout.sh",
+  "action": "$HOME/.config/wlogout/logout.sh",
   "text": "Logout",
   "keybind": "e"
 }
 {
+  "label": "shutdown",
+  "action": "$HOME/.config/wlogout/poweroff.sh",
+  "text": "Shutdown",
+  "keybind": "s"
+}
+{
   "label": "reboot",
-  "action": "/usr/bin/hyprshutdown -p %h/.config/wlogout/reboot.sh",
+  "action": "",
   "text": "Reboot",
   "keybind": "r"
 }

@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-exec loginctl terminate-user $USER
+/usr/bin/hyprshutdown -p "loginctl terminate-user $USER"

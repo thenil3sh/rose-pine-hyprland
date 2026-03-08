@@ -4,10 +4,12 @@
 }
 
 @define-color bg_color rgba(25, 23, 36, 0.9);
+/* @define-color bg_color black; */
 @define-color iris rgb(196, 167, 231);
 @define-color foam rgb(156, 207, 216);
 @define-color muted rgb(110, 106, 134);
 @define-color pine rgb(49, 116, 143);
+@define-color rose #ebbcba;
 
 #waybar {
   background: transparent;
@@ -20,7 +22,7 @@
 #workspaces {
   min-height: 0;
   transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
-  border-radius: 20px 8px 8px 20px;
+  border-radius: 20px 12px 12px 20px;
   background: @bg_color;
   transition: none;
   padding: 0px 10px;
@@ -157,7 +159,7 @@
   padding-left: 12px;
   padding-right: 15px;
   transition: none;
-  color: @pine;
+  color: @iris;
 }
 
 
@@ -166,7 +168,7 @@
 }
 
 #battery.critical:not(.charging) {
-  color: #b4637a;
+  color: @rose;
   animation-name: blink;
   animation-duration: 750ms;
   animation-timing-function: ease-in-out;
@@ -392,7 +394,8 @@
   padding: 0 15px;
   border-radius: 8px;
   background-color: @bg_color;
-  color: rgb(180, 99, 122);
+  background-size : 40px;
+  color: #524f67;
   border : 2px solid @bg_color;
   animation: record-blink 2.5s ease-in-out alternate infinite;
 }

@@ -20,11 +20,11 @@ box {
 #container,
 button {
 	min-width : 120px;
-	color : #e0def4;
+	color : transparent;
     border-radius: 20px;
 	background-color: #1f1d2e;
 	background-repeat: no-repeat;
-	background-position: center 50px;
+	background-position: center center;
 	background-size: 35%;
 	font-weight: 300;
 	transition: all ease-out 250ms;
@@ -46,14 +46,21 @@ button:focus, button:active {
 
 #logout:focus {
 	background-image: url("icons/door_focus.svg");
+	background-color : #eb6f92;
 }
 
-#hibernate {
-	background-image : url("icons/save.svg");
+#logout:focus, #hyprshutdown:focus, #shutdown:focus, #reboot:focus {
+	background-position: center center;
+	color : transparent;
+	background-size : 40%;
 }
 
-#hibernate:focus {
-	background-image : url("icons/save_leaf.svg");
+#hyprshutdown {
+	background-image : url("icons/land.svg");
+}
+
+#hyprshutdown:focus {
+	background-image : url("icons/land_focus.svg");
 }
 
 #shutdown {

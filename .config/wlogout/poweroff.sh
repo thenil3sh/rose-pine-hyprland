@@ -1,2 +1,2 @@
 #!/bin/bash
-exec systemctl poweroff
+/usr/bin/hyprshutdown -p "poweroff"

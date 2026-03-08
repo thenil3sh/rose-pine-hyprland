@@ -7,7 +7,7 @@
   "height": 35, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
   "spacing": 5, // Gaps between modules (4px)
-  "margin": "7 10 3 10",
+  "margin": "4 5 0 5",
   // Choose the order of the modules
   "modules-left": [
     "clock",
@@ -192,8 +192,6 @@
     "format-charging": "",
     "format-not-charging": "󰋑",
     "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
     "tooltip": "",
     "format-icons": [
       "󰂎",
