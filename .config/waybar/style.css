@@ -1,6 +1,7 @@
 * {
   font-family: "JetbrainsMono Nerd Font";
   font-weight: bold;
+  min-height: 0;
 }
 
 @define-color bg_color rgba(25, 23, 36, 0.9);
@@ -9,6 +10,7 @@
 @define-color foam rgb(156, 207, 216);
 @define-color muted rgb(110, 106, 134);
 @define-color pine rgb(49, 116, 143);
+@define-color love #eb6f92;
 @define-color rose #ebbcba;
 
 #waybar {
@@ -25,7 +27,7 @@
   border-radius: 20px 12px 12px 20px;
   background: @bg_color;
   transition: none;
-  padding: 0px 10px;
+  padding: 0px 12px;
   font-size: 0px;
 }
 
@@ -35,7 +37,7 @@
   padding: 0;
   border-radius: 20px;
   font-size: 12px;
-  margin: 0 10px;
+  margin: 0 4px;
 }
 
 #workspaces button.active {
@@ -51,8 +53,8 @@
   border-radius: 15px;
   margin : 3px 0px;
   border: 2px solid;
-  animation-name: urgent-shake;
   padding: 0 20px;
+  animation-name: urgent-shake;
   animation-timing-function: linear;
   animation-duration: 750ms;
   animation-delay: 1s;
@@ -195,7 +197,7 @@
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
   background-color: @bg_color;
   color: @iris;
-  border-radius: 8px 20px 20px 8px;
+  border-radius: 12px;
   padding-left: 12px;
   padding-right: 15px;
 }
@@ -403,8 +405,9 @@
 #mpris {
   background: @bg_color;
   padding: 0px 12px;
-  border-radius: 20px;
+  border-radius: 12px 20px 20px 12px;
   transition: color 0.5s linear, border-color 0.5s linear;
+  padding-right : 18px;
 }
 
 #mpris.playing {
@@ -413,4 +416,51 @@
 
 #mpris.paused {
   color: @muted;
+}
+
+#custom-doro_timer {
+  border-radius: 12px;
+  padding : 0px 12px;
+  transition : all 0.5s ease-out;
+  transition : color 0.5s;
+  background-color: @bg_color;
+  
+}
+
+#custom-doro_timer.paused.session-timer {
+  color : alpha(@love, 0.5);
+}
+
+#custom-doro_timer.paused.session-timer:hover {
+  color : alpha(@love, 0.7);
+}
+
+#custom-doro_timer.session-timer {
+  color : alpha(@love, 0.7);
+}
+
+#custom-doro_timer.session-timer:hover {
+  color : alpha(@love, 1);
+}
+
+#custom-doro_timer.session-over {
+  color : @love;
+}
+
+#custom-doro_timer.break-over {
+  padding-right : 18px;
+  padding-left : 24px;
+  border-radius : 20px;
+  border : 3px solid @bg_color;
+  color : @iris;
+  transition : background 0.2s ease-out;
+}
+
+#custom-doro_timer.break-over:hover {
+  background: @rose;
+  color : @bg_color;
+}
+
+#custom-doro_timer.break-timer {
+  color : @foam;
 }

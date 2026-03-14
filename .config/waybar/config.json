@@ -4,13 +4,14 @@
   "layer": "bottom",
   // "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
-  "height": 35, // Waybar height (to be removed for auto height)
+  "height": 33, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
   "spacing": 5, // Gaps between modules (4px)
-  "margin": "4 5 0 5",
+  "margin": "4 10 0 10",
   // Choose the order of the modules
   "modules-left": [
     "clock",
+    "custom/doro_timer",
     // "custom/waybar_media",
     // "mpd"
     "mpris"
@@ -68,7 +69,7 @@
     "format": "{icon}",
     "format-icons": {
       "active": "",
-      "default" : ""
+      "default": ""
     }
   },
   "keyboard-state": {
@@ -86,10 +87,7 @@
   "sway/scratchpad": {
     "format": "{icon} {count}",
     "show-empty": false,
-    "format-icons": [
-      "",
-      ""
-    ],
+    "format-icons": ["", ""],
     "tooltip": true,
     "tooltip-format": "{app}: {title}"
   },
@@ -136,7 +134,7 @@
   "tray": {
     "icons": {
       "discord": "caffeine-cup-full",
-      "easyeffects" : "banshee-panel"
+      "easyeffects": "banshee-panel"
     },
     "spacing": 10,
     "icon-size": 20
@@ -160,26 +158,12 @@
     "critical-threshold": 80,
     // "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", ""]
   },
   "backlight": {
     // "device": "acpi_video1",
     "format": "{percent}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
   "battery": {
     "states": {
@@ -193,19 +177,7 @@
     "format-not-charging": "󰋑",
     "format-alt": "{time} {icon}",
     "tooltip": "",
-    "format-icons": [
-      "󰂎",
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ]
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
   "battery#bat2": {
     "bat": "BAT2"
@@ -227,13 +199,7 @@
     // {ipaddr} for ip address
     // {signalStrength}
     "format-wifi": "{icon}",
-    "format-icons": [
-      "󰤯",
-      "󰤟",
-      "󰤢",
-      "󰤥",
-      "󰤨"
-    ],
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "on-click-middle": "alacritty -e nmtui",
     "format-ethernet": "󰈀",
     "tooltip-format": "{ifname} via {gwaddr} ",
@@ -257,9 +223,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [
-        ""
-      ]
+      "default": [""]
     },
     "on-click": "pavucontrol"
   },
@@ -291,14 +255,14 @@
     "signal": 10,
     "return-type": "json",
     "format": "{text}",
-    "hide-empty-text" : true,
+    "hide-empty-text": true,
     "exec": "$HOME/.config/waybar/record_state.sh",
     "on-click": "$HOME/.config/hypr/scripts/record.sh"
   },
   "mpris": {
     "tooltip-format": " {player_icon} {player} ",
-    "title-len": 30,
-    "format": "{player_icon}  {title}",
+    "max-length": 20,
+    "format": "{title} {player_icon}",
     "hide-empty-text": true,
     "player-icons": {
       "default": "▶",
@@ -320,6 +284,7 @@
     "hide-empty-text": true,
     "on-click": "playerctl play-pause",
     "format": "{icon}  {text}",
+    "max-length" : "10",
     "format-icons": {
       "spotify": "",
       "brave": "",
@@ -360,4 +325,23 @@
       }
     ]
   },
+  "custom/doro_timer" : {
+    "exec" : "doro_rx",
+    "return-type" : "json",
+    "on-scroll-up" : "doro_tx increase",
+    "on-scroll-down" : "doro_tx decrease",
+    "on-click" : "doro_tx play-pause",
+    "smooth-scrolling-threshold" : 1.5,
+    "on-click-right" : "doro_tx toggle",
+    "on-click-middle" : "doro_tx reset",
+    "format" : "{icon} {text}",
+    "hide-empty-text" : false,
+    "align" : 0,
+    "format-icons" : {
+      "session-timer" : "󰥔",
+      "break-timer" : "",
+      "session-over" : "",
+      "break-over" : ""
+    }
+  }
 }
