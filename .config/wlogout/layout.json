@@ -1,8 +1,8 @@
 {
-  "label": "hyprshutdown",
-  "action": "/usr/bin/hyprshutdown",
-  "text": "Hypr Shutdown",
-  "keybind": "h"
+  "label" : "hyprshutdown",
+  "action" : "/usr/bin/hyprlock",
+  "text" : "Lock Screen",
+  "keybind" : "l"  
 }
 {
   "label": "logout",
