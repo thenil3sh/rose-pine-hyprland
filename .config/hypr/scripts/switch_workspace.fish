@@ -10,7 +10,7 @@ for w in $workspaces
         echo "end set!!! $w"
     else if set -q end
         echo "switched to $w"
-        hyprctl dispatch workspace $w
+        hyprctl dispatch "hl.dsp.focus({ workspace = $w })"
         return
     end
 end

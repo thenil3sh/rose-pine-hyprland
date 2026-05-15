@@ -1,33 +1,52 @@
-local noctalia = 'qs -c noctalia-shell ipc call'
+local noctalia = 'qs -c noctalia-shell ipc call '
 local launcher = ' launcher '
 local clipboard = ' clipboard '
-local toggle = 'toggle'
+local toggle = ' toggle '
 local lockScreen = ' lockScreen '
 local lock = ' lock '
 local volume = ' volume '
 local increase = ' increase '
 local decrease = ' decrease '
-local brightness = ' brightness ' 
+local brightness = ' brightness '
+local plugin = 'plugin:'
 
-local mainMod = "SUPER"
+SHIFT = 'SHIFT +'
+local Print = 'Print'
 
-hl.bind(
-    mainMod .. "+ R",
-    hl.dsp.exec_cmd(noctalia .. launcher .. toggle)
-)
+local mainMod = 'SUPER +'
 
-hl.bind(
-    mainMod .. "+ SHIFT + V",
-    hl.dsp.exec_cmd(noctalia .. launcher .. clipboard)
-)
+local function bind(keyCombo, command)
+    hl.bind(keyCombo, hl.dsp.exec_cmd(command))
+end
 
-hl.bind(mainMod .. "+ SHIFT + L", hl.dsp.exec_cmd(noctalia .. lockScreen .. lock))
+bind(mainMod .. 'R'             , noctalia .. launcher .. toggle)
 
-hl.bind('XF86AudioRaiseVolume', hl.dsp.exec_cmd(noctalia..volume..increase))
-hl.bind('XF86AudioLowerVolume', hl.dsp.exec_cmd(noctalia..volume..decrease))
-hl.bind('XF86AudioMute', hl.dsp.exec_cmd(noctalia..volume..'muteOutput'))
+-- Clipboard History
+bind (mainMod .. SHIFT .. 'V'   , noctalia..launcher..clipboard)
+
+-- Lock Screen
+bind(mainMod .. SHIFT .. 'L'    , noctalia .. lockScreen .. lock)
+
+-- Audio 
+bind('XF86AudioRaiseVolume'     , noctalia .. volume .. increase)
+bind('XF86AudioLowerVolume'     , noctalia .. volume .. decrease)
+bind('XF86AudioMute'            , noctalia .. volume .. 'muteOutput')
 
 
+-- Mic Mute Toggle
+bind('XF86AudioMicMute'         , noctalia .. volume .. 'muteInput')
 
-hl.bind('XF86MonBrightnessUp', hl.dsp.exec_cmd(noctalia..brightness..increase))
-hl.bind('XF86MonBrightnessDown', hl.dsp.exec_cmd(noctalia..brightness..decrease))
+
+-- Backlight
+bind('XF86MonBrightnessUp'      , noctalia .. brightness .. increase)
+bind('XF86MonBrightnessDown'    , noctalia .. brightness .. decrease)
+
+
+-- Wallpaper
+bind(mainMod .. 'W'             , noctalia .. 'wallpaper' .. toggle)
+
+
+-- Screen Recoder
+bind(mainMod .. Print           , noctalia .. plugin .. 'screen-recorder' .. toggle)
+
+

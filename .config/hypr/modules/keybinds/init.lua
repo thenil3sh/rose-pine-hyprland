@@ -1,4 +1,3 @@
 require('modules.keybinds.launch')
 require('modules.keybinds.noctalia')
-
-mainMod = 'SUPER'
+require('modules.keybinds.window')
