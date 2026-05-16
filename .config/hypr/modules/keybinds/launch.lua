@@ -1,10 +1,12 @@
-local mainMod = "SUPER"
+local mainMod = 'SUPER + '
 local terminal = "alacritty"
 local fileManager = "thunar"
 local browser = "brave"
 
+local function bind(keyCombo, command)
+    hl.bind(keyCombo, hl.dsp.exec_cmd(command))
+end
 
-
-hl.bind(mainMod .. '+ Q', hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod.."+ E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod.."+ B", hl.dsp.exec_cmd(browser))
+bind(mainMod .. 'Q'         , terminal)
+bind(mainMod .. 'E'         , fileManager)
+bind(mainMod .. 'B'         , browser)

@@ -22,7 +22,7 @@ end
 bind(mainMod .. 'R'             , noctalia .. launcher .. toggle)
 
 -- Clipboard History
-bind (mainMod .. SHIFT .. 'V'   , noctalia..launcher..clipboard)
+bind (mainMod .. SHIFT .. 'V'   , noctalia .. launcher .. clipboard)
 
 -- Lock Screen
 bind(mainMod .. SHIFT .. 'L'    , noctalia .. lockScreen .. lock)

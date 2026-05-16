@@ -6,17 +6,17 @@ local bind = hl.bind;
 
 -- Change focus
 local focus = hl.dsp.focus;
-bind(mainMod .. 'down'              , focus({ direction = 'down' }))
-bind(mainMod .. 'up'                , focus({ direction = 'up' }))
-bind(mainMod .. 'left'              , focus({ direction = 'left' }))
-bind(mainMod .. "right"             , focus({ direction = 'right' }))
+bind(mainMod .. 'down'              , focus { direction = 'down' })
+bind(mainMod .. 'up'                , focus { direction = 'up' })
+bind(mainMod .. 'left'              , focus { direction = 'left' })
+bind(mainMod .. "right"             , focus { direction = 'right' })
 
 
 -- Switch Workspaces
 for i = 1, 10 do
     local num = i % 10 -- 10 maps to key 0
-    bind(mainMod .. num             , hl.dsp.focus({ workspace = i }))
-    bind(mainMod .. shift .. num    , hl.dsp.window.move({ workspace = i }))
+    bind(mainMod .. num             , hl.dsp.focus { workspace = i })
+    bind(mainMod .. shift .. num    , hl.dsp.window.move { workspace = i })
 end
 
 -- Move/resize windows
